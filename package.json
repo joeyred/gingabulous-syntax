@@ -2,12 +2,12 @@
   "name": "gingabulous-syntax",
   "theme": "syntax",
   "version": "0.0.0",
-  "description": "A short description of your syntax theme",
+  "description": "My personal Atom syntax theme",
   "keywords": [
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/atom/new-gingabulous-syntax",
+  "repository": "https://github.com/joeyred/gingabulous-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
