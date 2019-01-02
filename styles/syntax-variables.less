@@ -1,0 +1,310 @@
+@import "colors";
+
+// This defines all syntax variables that syntax themes must implement when they
+// include a syntax-variables.less file.
+
+// General colors
+@syntax-text-color: @very-light-gray;
+@syntax-cursor-color: white;
+@syntax-selection-color: lighten(@dark-gray, 10%);
+@syntax-background-color: @very-dark-gray;
+
+// Guide colors
+@syntax-wrap-guide-color: @dark-gray;
+@syntax-indent-guide-color: @gray;
+@syntax-invisible-character-color: @gray;
+
+// For find and replace markers
+@syntax-result-marker-color: @light-gray;
+@syntax-result-marker-color-selected: white;
+
+// Gutter colors
+@syntax-gutter-text-color: @very-light-gray;
+@syntax-gutter-text-color-selected: @syntax-gutter-text-color;
+@syntax-gutter-background-color: @dark-gray;
+@syntax-gutter-background-color-selected: @gray;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed: @blue;
+@syntax-color-added: @green;
+@syntax-color-modified: @orange;
+@syntax-color-removed: @red;
+
+// General colors
+@syntax-text-color: @very-light-gray;
+@syntax-cursor-color: @blue;
+@syntax-selection-color: lighten(@dark-gray, 10%);
+@syntax-background-color: @very-dark-gray;
+
+// Guide colors
+@syntax-wrap-guide-color: @dark-gray;
+@syntax-indent-guide-color: @gray;
+@syntax-invisible-character-color: @gray;
+
+// For find and replace markers
+@syntax-result-marker-color: @light-gray;
+@syntax-result-marker-color-selected: white;
+
+// Gutter colors
+@syntax-gutter-text-color: @very-light-gray;
+@syntax-gutter-text-color-selected: @syntax-gutter-text-color;
+@syntax-gutter-background-color: @very-dark-gray;
+@syntax-gutter-background-color-selected: @gray;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed: @blue;
+@syntax-color-added: @green;
+@syntax-color-modified: @orange;
+@syntax-color-removed: @red;
+
+/*
+ * Global
+ */
+//#78ffb1
+//#a2e43b
+// Text
+@scope-text: white;
+// Comments
+@scope-comments: @light-gray;
+
+// Punctuation
+@scope-punctuation:           white;
+// Operators
+@scope-operators:             @clay;
+// Keywords
+@scope-keywords:              @clay;
+// Strings
+@scope-strings:               @sky-green;
+// Variables
+@scope-variables:             @white;
+// Constants
+@scope-constant:              @dark-pink;
+@scope-interpolation:         @clay;
+// Function Create
+@scope-function-create:       @cyan;
+// Function Call
+@scope-function-call:         @lavender;
+// Classes
+@scope-class:                 @grass-green;
+// Inherited Class
+@scope-inherited-class:       @pink;
+// Methods
+@scope-method:                @purple;
+// Getter & Setter
+@scope-accessor:              @clay;
+// Object
+@scope-object:                @blue;
+// Object Key
+@scope-object-key:            @magenta;
+// This
+@scope-this:                  @faded-dark-orange;
+// Storage Type
+@scope-storage-type:          @pink;
+// Storage Modifier
+@scope-storage-modifier:      @pink;
+// Integers
+// @scope-integers: ;
+// Boolean
+@scope-boolean:               @red;
+// Native Function
+@scope-native-function:       @cyan;
+// Numeric Constant
+@scope-numeric-constant:      @dark-pink;
+// Constant: Built-in
+@scope-constant-built-in:     @white;
+// Constant: User-defined
+@scope-constant-user-defined: @white;
+
+/*
+ * DocBlock
+ */
+@scope-docblock-class: @pink;
+@scope-jsdoc-storage:  lighten(@purple, 20%);
+@scope-jsdoc-variable: lighten(@pink, 20%);
+@scope-jsdoc-instance: lighten(@blue, 20%);
+@scope-jsdoc-brace:    @scope-comments;
+
+/*
+ * JavaScript
+ */
+// Prototype
+@scope-js-prototype:          @purple;
+// Anonymous Function
+@scope-js-anonymous-function: @cyan;
+// Dollar Sign Variable
+@scope-js-dollar-variable:    @turquoise;
+// Variable: Property
+@scope-js-property-variable:  @faded-blue;
+// Braces
+@scope-js-braces:             @grey-brick;
+// []
+// ()
+@scope-js-parentheses:        @grey-brick;
+// {}
+
+/*
+* HTML
+*/
+// Tags
+@scope-html-tag:             @faded-yellow;
+// Doctype/XML Processing
+@scope-html-doctype:         @blue;
+// Attributes
+@scope-html-attr:            @pink;
+// Attribute Punctuation
+@scope-html-punctuation:     white;
+// Quotation Marks
+@scope-html-quotes:          @grey-brick;
+// Tags Punctuation
+@scope-html-tag-punctuation: @grey-brick;
+// Script
+
+/*
+* CSS
+*/
+// @ at-rule
+@scope-css-at-rule:             @white;
+// #Id
+@scope-css-id:                  @purple;
+// .class
+@scope-css-class:               @light-pink;
+// Property Name
+@scope-css-property-name:       @faded-blue;
+// Property Value
+@scope-css-property-value:      @light-turquoise;
+// Color
+@scope-css-color:               @purple;
+// Constructor Argument
+// {}
+// Tag Punctuation
+// Keyword Punctuation
+@scope-css-keyword-punctuation: @purple;
+// : ,
+// @scope-css-punctuation: ;
+// :pseudo
+@scope-css-pseudo:              @green-light;
+// Support Function
+@scope-css-function-call:       #d575fc;
+
+/*
+* SASS
+*/
+// Variable
+@scope-scss-variable: @blue;
+// Map Key
+@scope-scss-map-key:  @pink;
+// Mixins
+@scope-scss-mixin:    @turquoise;
+// Function
+@scope-scss-function: @white;
+
+/*
+* LESS
+*/
+// Variables
+// Mixins
+// Extend
+
+/*
+* JSON
+*/
+// Key
+@scope-json-keys:           @pink;
+// Key Quotes
+@scope-json-key-quotes:    @purple;
+// String
+@scope-json-strings:       @scope-strings;
+// String Quotes
+@scope-json-string-quotes: @purple;
+
+/*
+* PHP
+*/
+// Variable
+@scope-php-variable: @dark-blue;
+// New
+// Class
+// Array()
+// []
+// Function Construct
+
+/*
+* Markdown
+*/
+// heading
+@scope-md-heading:         @orange;
+// italic
+@scope-md-italic:          @pink;
+// bold
+@scope-md-bold:            @magenta;
+// Strikethrough
+@scope-md-strike:          @purple;
+// Quote
+@scope-md-quote:           @cyan;
+// Link
+@scope-md-link:            @grass-green;
+// Link Text
+@scope-md-link-text:       @cyan;
+// Unordered List
+@scope-md-unordered-list:  @purple;
+// Raw
+@scope-md-raw:             @red;
+// Separator
+@scope-md-separator:       @pink;
+// Table
+@scope-md-table:           @lavender;
+// Table borders
+@scope-md-table-border:    @green;
+// Table Align
+@scope-md-table-alignment: @white;
+
+/*
+ * Vue.js
+ */
+@scope-vuejs-script-tag: @blue;
+@scope-vuejs-style-tag: @blue;
+
+/*
+* Pug
+*/
+@scope-pug-id:             @scope-css-id;
+@scope-pug-class:          @scope-css-class;
+@scope-pug-attr:           @cyan;
+// Import, Block, Include and other directives.
+@scope-pug-import:         @purple;
+@scope-pug-include-value:  @scope-strings;
+@scope-pug-html-character: @scope-html-tag;
+@scope-pug-attr-parent:    @light-gray;
+@scope-pug-operator:       @scope-operators;
+@scope-pug-keyword:        @scope-operators;
+@scope-pug-mixin:          @scope-function-call;
+@scope-pug-punctuation:    @scope-operators;
+@scope-pug-filter:         @turquoise;
+@scope-pug-variable:       lighten(@faded-blue, 10%);
+
+/*
+* Liquid
+*/
+@scope-liquid-tag:             @yellow;
+@scope-liquid-punctuation:     @green;
+@scope-liquid-tag-punctuation: lighten(@purple, 10%);
+@scope-liquid-variable:        @blue;
+@scope-liquid-class:           white;
+@scope-liquid-function:        lighten(@magenta, 10%);
+
+/*
+* todo, idea, fixme, note, etc...
+*/
+@scope-notes-tags: @yellow;
+
+/*
+* Termination
+*/
+// Text
+@scope-terminal-text:   lighten(@purple, 10%);
+// Highlight bg
+@scope-terminal-h-bg:   lighten(@cyan, 30%);
+// Highlight Text
+@scope-terminal-h-text: @white;
+// Curser Color
+@scope-terminal-curser: @magenta;

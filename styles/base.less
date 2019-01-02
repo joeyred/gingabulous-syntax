@@ -1,0 +1,598 @@
+@import "syntax-variables";
+
+atom-text-editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @light-gray;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+}
+
+
+/*
+ * Scopes
+ ===============================================================*/
+
+// Text
+.syntax--text {
+  color: @scope-text;
+}
+// Comments
+.syntax--comment,
+.syntax--punctuation.syntax--comment {
+  color: @scope-comments;
+}
+
+// Punctuation
+.syntax--punctuation {
+  color: @scope-punctuation;
+  // HTML Tag Punctuation
+  &.syntax--tag {
+    color: @scope-html-tag-punctuation;
+    // Liquid Tag punctuation
+    &.syntax--liquid {
+      color: @scope-liquid-tag-punctuation;
+    }
+  }
+  &.syntax--quasi {
+    color: @scope-interpolation;
+  }
+  &.syntax--string.syntax--html {
+    color: @scope-html-quotes;
+  }
+
+  &.syntax--keyword {
+    color: @scope-css-keyword-punctuation;
+  }
+
+  &.syntax--output {
+    &.syntax--liquid {
+      color: @scope-liquid-tag-punctuation;
+    }
+  }
+}
+// Entity
+.syntax--entity {
+  &.syntax--accessor {
+    color: @scope-accessor;
+  }
+}
+
+// Keywords
+.syntax--keyword {
+  &.syntax--operator {
+    color: @scope-operators;
+  }
+
+  &.syntax--at-rule {
+    color: @scope-css-at-rule;
+
+    &.syntax--mixin {
+      color: @scope-scss-mixin;
+    }
+
+    &.syntax--function {
+      color: @scope-scss-function;
+    }
+  }
+
+  &.syntax--phpdoc {
+    color: @scope-docblock-class;
+  }
+}
+// Variables
+.syntax--variable {
+  color: @scope-variables;
+
+  &.syntax--class {
+    color: @scope-class;
+  }
+
+  &.syntax--prototype.syntax--js {
+    color: @scope-js-prototype;
+  }
+
+  &.syntax--dollar.syntax--js {
+    color: @scope-js-dollar-variable;
+  }
+
+  &.syntax--this {
+    color: @scope-this;
+  }
+
+  &.syntax--object {
+    color: @scope-object;
+  }
+
+  &.syntax--scss {
+    color: @scope-scss-variable;
+  }
+
+  &.syntax--php {
+    color: @scope-php-variable;
+  }
+
+  .syntax--punctuation {
+    color: @scope-text;
+  }
+
+  &.syntax--other {
+    &.syntax--liquid {
+      color: @scope-liquid-variable;
+    }
+  }
+}
+// Support
+.syntax--support {
+  &.syntax--constant {
+    color: @scope-constant;
+
+    &.syntax--property-value {
+      color: @scope-boolean;
+    }
+  }
+
+  &.syntax--function {
+    color: @scope-native-function;
+
+    &.syntax--scss,
+    &.syntax--css {
+      color: @scope-css-function-call;
+    }
+
+    &.syntax--liquid {
+      color: @scope-liquid-function;
+    }
+  }
+
+  &.syntax--map {
+    &.syntax--key {
+      color: @scope-scss-map-key;
+    }
+  }
+
+  &.syntax--object {
+    color: @scope-native-function;
+    font-style: italic;
+  }
+
+  &.syntax--class {
+    &.syntax--liquid {
+      color: @scope-liquid-class;
+    }
+  }
+}
+// Function call
+.syntax--function-call {
+  color: @scope-function-call;
+}
+
+// Storage Type
+.syntax--storage {
+  &.syntax--type {
+    color: @scope-storage-type;
+
+    &.syntax--function.syntax--js {
+      color: @scope-js-anonymous-function;
+    }
+
+    &.syntax--class {
+      &.syntax--doc {
+        color: @scope-docblock-class;
+      }
+
+      &.syntax--todo,
+      &.syntax--idea,
+      &.syntax--note,
+      &.syntax--fixme {
+        color: @scope-notes-tags;
+      }
+
+      &.syntax--todo {
+        // color: @green;
+      }
+
+      &.syntax--idea {
+        // color: @very-dark-gray;
+      }
+
+      &.syntax--note {
+        // color: @white;
+      }
+
+      &.syntax--fixme {
+        color: @red;
+      }
+    }
+  }
+
+  &.syntax--modifier {
+    color: @scope-storage-modifier;
+  }
+}
+
+
+// Strings
+.syntax--string {
+  color: @scope-strings;
+
+  &.syntax--json {
+    // color: @scope-json-key;
+  }
+}
+
+.syntax--json {
+
+  &.syntax--punctuation {
+    color: @scope-json-string-quotes;
+  }
+
+  &.syntax--key {
+    color: @scope-json-keys;
+    > .syntax--string {
+      color: @scope-json-keys;
+    }
+  }
+
+  &.syntax--value {
+    color: @scope-json-strings;
+    > .syntax--string {
+      color: @scope-json-strings;
+    }
+  }
+}
+
+// Constants
+.syntax--constant {
+  color: @scope-constant;
+
+  &.syntax--numeric {
+    color: @scope-numeric-constant;
+  }
+
+  &.syntax--color {
+    color: @scope-css-color;
+  }
+  &.syntax--css {
+    &.syntax--property-value {
+      color: @scope-css-property-value;
+    }
+  }
+
+  &.syntax--object {
+    color: @scope-object;
+
+    &.syntax--key {
+      // color: @scope-object-key;
+      .syntax--string {
+        color: @scope-object-key;
+      }
+    }
+  }
+}
+
+.syntax--entity {
+  &.syntax--other {
+    &.syntax--attribute-name {
+      color: @scope-html-attr;
+
+      &.syntax--pseudo-element {
+        color: @scope-css-pseudo;
+      }
+
+      &.syntax--pseudo-class {
+        color: @scope-css-pseudo;
+      }
+
+      &.syntax--id {
+        &.syntax--css {
+          color: @scope-css-id;
+        }
+      }
+    }
+
+    &.syntax--inherited-class {
+      color: @scope-inherited-class;
+    }
+
+    &.syntax--css {
+      &.syntax--class {
+        color: @scope-css-class;
+      }
+    }
+  }
+
+  &.syntax--name {
+    // Classes
+    &.syntax--class {
+      color: @scope-class;
+    }
+    // Function Call
+    &.syntax--function {
+      color: @scope-function-call;
+
+      &.syntax--php {
+        color: @scope-function-create;
+      }
+    }
+    // HTML Tag
+    &.syntax--tag {
+      color: @scope-html-tag;
+    }
+  }
+}
+
+.syntax--property-name {
+  color: @scope-css-property-name;
+}
+
+.syntax--keyword {
+  color: @scope-keywords;
+}
+
+// Markdown
+.syntax--gfm {
+  color: @scope-text;
+
+  &.syntax--heading {
+    color: @scope-md-heading;
+  }
+
+  &.syntax--link {
+    color: @scope-md-link-text;
+
+    .syntax--link {
+      color: @scope-md-link;
+    }
+  }
+
+  &.syntax--unordered.syntax--list {
+    color: @scope-md-unordered-list;
+  }
+
+  &.syntax--raw {
+    color: @scope-md-raw;
+  }
+
+  &.syntax--hr {
+    color: @scope-md-separator;
+  }
+
+  &.syntax--code {
+    color: @scope-md-raw;
+  }
+
+  &.syntax--bold {
+    color: @scope-md-bold;
+    font-weight: bold;
+  }
+
+  &.syntax--italic {
+    color: @scope-md-italic;
+    font-style: italic;
+  }
+
+  &.syntax--strike {
+    color: @scope-md-strike;
+  }
+
+  &.syntax--quote {
+    color: @scope-md-quote;
+  }
+
+  &.syntax--table {
+    color: @scope-md-table;
+
+    .syntax--border {
+      color: @scope-md-table-border;
+
+      &.syntax--alignment {
+        color: @scope-md-table-alignment;
+      }
+    }
+  }
+}
+
+.syntax--braces.syntax--js {
+  color: @scope-text;
+}
+
+/**
+ * PUG
+ * ========================= */
+.syntax--pug {
+  color: @scope-text;
+
+  .syntax--comment {
+    color: @scope-comments;
+  }
+
+  .syntax--string {
+    color: @scope-strings;
+  }
+
+  &.syntax--script {
+    color: @blue;
+  }
+
+  &.syntax--function {
+    color: @scope-pug-mixin;
+
+    &.syntax--type {
+      color: @scope-pug-punctuation;
+    }
+  }
+
+
+
+  .syntax--constant {
+    color: @scope-pug-class;
+
+    &.syntax--attribute {
+      &.syntax--tag {
+        color: @scope-pug-attr-parent;
+      }
+    }
+    &.syntax--filter {
+      color: @scope-pug-filter;
+    }
+  }
+
+  .syntax--entity {
+    &.syntax--css {
+      color: @scope-pug-class;
+    }
+
+    &.syntax--attribute-name {
+      color: @scope-pug-attr;
+    }
+
+    &.syntax--id {
+      color: @scope-pug-id;
+    }
+    &.syntax--tag {
+      color: @scope-pug-html-character;
+    }
+  }
+
+  &.syntax--control {
+    color: @white;
+    &.syntax--js {
+      color: @scope-strings;
+    }
+  }
+
+  .syntax--storage {
+    &.syntax--import {
+      color: @scope-pug-import;
+      font-weight: bold;
+    }
+  }
+
+  .syntax--variable {
+    color: @scope-pug-variable;
+    &.syntax--control {
+      color: @scope-pug-include-value;
+      font-style: italic;
+    }
+  }
+
+
+}
+
+.syntax--meta {
+  &.syntax--brace {
+    &.syntax--js {
+      color: @scope-js-braces;
+    }
+  }
+}
+
+.syntax--vue {
+  .syntax--tag {
+    &.syntax--script {
+      color: @scope-vuejs-script-tag;
+    }
+
+    &.syntax--style {
+      color: @scope-vuejs-style-tag;
+    }
+  }
+}
+
+.syntax--jsdoc {
+  &.syntax--storage {
+    color: @scope-jsdoc-storage;
+  }
+
+  &.syntax--variable {
+    color: @scope-jsdoc-variable;
+  }
+
+  &.syntax--instance {
+    color: @scope-jsdoc-instance;
+
+    .syntax--brace {
+      &.syntax--curly {
+        color: @scope-jsdoc-brace;
+      }
+    }
+  }
+}
+
+/*
+ * Package Specific Styles
+ ===============================================================*/
+
+/*
+ * Termination
+ */
+
+.terminal-view {
+  .xterm {
+    background-color: @very-dark-gray;
+    color: @scope-terminal-text;
+
+    .syntax--terminal {
+      color: @scope-terminal-text;
+    }
+
+    ::selection {
+      background-color: @scope-terminal-h-bg;
+      color: @scope-terminal-h-text;
+    }
+
+    .terminal-cursor {
+      background-color: @scope-terminal-curser;
+    }
+  }
+}
+
+// Mini editor
+
+atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
